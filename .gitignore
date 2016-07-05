@@ -1,3 +1,6 @@
 /vendor
 /node_modules
 .env
+.idea
+_ide_helper.php
+/storage/database.sqlite
