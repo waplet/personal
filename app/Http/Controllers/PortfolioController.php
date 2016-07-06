@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 class PortfolioController extends Controller
 {
-    public function getIndex()
+    public function index()
     {
         return view('portfolio.index');
     }

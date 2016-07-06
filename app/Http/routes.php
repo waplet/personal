@@ -11,16 +11,39 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::group(['middleware' => 'web'], function () {
+    /**
+     * Frontend routes
+     */
+    Route::get('/', 'WelcomeController@index');
+    Route::get('home', 'HomeController@index');
+    Route::resource('portfolio', 'PortfolioController', []);
 
+    /**
+     * Auth routes
+     */
+    // Authentication routes...
+    Route::get('auth/login', 'Auth\AuthController@getLogin')->name('auth.login');
+    Route::post('auth/login', 'Auth\AuthController@postLogin');
+    Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-Route::controllers([
-    'portfolio' => 'PortfolioController'
-]);
+    // Registration routes...
+    Route::get('auth/register', 'Auth\AuthController@getRegister');
+    Route::post('auth/register', 'Auth\AuthController@postRegister');
+});
+
+/**
+ * Backend Routes
+ * Namespaces indicate folder structure
+ * Admin middleware groups web, auth, and routeNeedsPermission
+ */
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+    Route::get('/', 'DashboardController@index');
+    Route::get('/dashboard', 'DashboardController@index');
+
+});
+Route::auth();
+
