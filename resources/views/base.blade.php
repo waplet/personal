@@ -7,7 +7,7 @@
     <title>waplet's portfolio</title>
 
     <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/personal.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
