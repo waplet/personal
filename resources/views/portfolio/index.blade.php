@@ -16,7 +16,7 @@
                         <p>
                             <span class="portfolio__block__price bg-success">FREE</span>
                         </p>
-                        <a href="#" class="btn btn-default">Preview &amp; Download</a>
+                        <a href="#" class="btn btn-default">Download</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         <p>
                             <span class="portfolio__block__price bg-danger"><b>25€</b></span>
                         </p>
-                        <a href="#" class="btn btn-default">Buy &amp; Download</a>
+                        <a href="#" class="btn btn-default">Buy</a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                         <p>
                             <span class="portfolio__block__price bg-danger"><b>50€</b></span>
                         </p>
-                        <a href="#" class="btn btn-default">Buy &amp; Download</a>
+                        <a href="#" class="btn btn-default">Buy</a>
                     </div>
                 </div>
             </div>
