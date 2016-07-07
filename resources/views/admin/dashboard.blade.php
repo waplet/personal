@@ -51,11 +51,9 @@
             </div>
         </div>
     </div>
-
-    <!-- footer content -->
-    @include('admin.layouts.footer')
-    <!-- /footer content -->
-
 </div>
 <!-- /page content -->
+<!-- footer content -->
+@include('admin.layouts.footer')
+<!-- /footer content -->
 @endsection
