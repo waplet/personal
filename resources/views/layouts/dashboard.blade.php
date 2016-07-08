@@ -244,6 +244,14 @@
                             </div>
                             <!-- /input-group -->
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-image fa-fw"></i> Portfolio<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('admin/product/create') ? 'class="active"' : '') }}>
+                                    <a href="{{ url('admin/product/create') }}">Add Product</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li {{ (Request::is('admin/') ? 'class="active"' : '') }}>
                             <a href="{{ url ('admin/') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>

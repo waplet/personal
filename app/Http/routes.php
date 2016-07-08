@@ -42,7 +42,8 @@ Route::group(['middleware' => 'web'], function () {
  */
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
-    Route::get('/dashboard', 'DashboardController@index');
+    Route::get('dashboard', 'DashboardController@index');
+    Route::resource('product', 'ProductController');
 
     // temporary
     Route::get('/charts', function()
