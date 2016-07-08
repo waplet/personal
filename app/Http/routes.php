@@ -43,6 +43,69 @@ Route::group(['middleware' => 'web'], function () {
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::get('/dashboard', 'DashboardController@index');
+
+    // temporary
+    Route::get('/charts', function()
+    {
+        return View::make('admin.mcharts');
+    });
+
+    Route::get('/tables', function()
+    {
+        return View::make('admin.table');
+    });
+
+    Route::get('/forms', function()
+    {
+        return View::make('admin.form');
+    });
+
+    Route::get('/grid', function()
+    {
+        return View::make('admin.grid');
+    });
+
+    Route::get('/buttons', function()
+    {
+        return View::make('admin.buttons');
+    });
+
+
+    Route::get('/icons', function()
+    {
+        return View::make('admin.icons');
+    });
+
+    Route::get('/panels', function()
+    {
+        return View::make('admin.panel');
+    });
+
+    Route::get('/typography', function()
+    {
+        return View::make('admin.typography');
+    });
+
+    Route::get('/notifications', function()
+    {
+        return View::make('admin.notifications');
+    });
+
+    Route::get('/blank', function()
+    {
+        return View::make('admin.blank');
+    });
+
+    Route::get('/login', function()
+    {
+        return View::make('admin.login');
+    });
+
+    Route::get('/documentation', function()
+    {
+        return View::make('admin.documentation');
+    });
+
 });
 Route::auth();
 
