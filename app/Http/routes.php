@@ -40,10 +40,9 @@ Route::group(['middleware' => 'web'], function () {
  * Namespaces indicate folder structure
  * Admin middleware groups web, auth, and routeNeedsPermission
  */
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
-    Route::get('/', 'DashboardController@index');
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::get('/dashboard', 'DashboardController@index');
-
 });
 Route::auth();
 
