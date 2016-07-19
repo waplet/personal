@@ -8,6 +8,8 @@ class ProductController extends Controller
 {
     public function create()
     {
-        return view('admin.blank');
+        return view('portfolio.create', [
+            'pageHeading' => 'Create product'
+        ]);
     }
 }
