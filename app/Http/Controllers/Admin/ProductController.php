@@ -12,4 +12,11 @@ class ProductController extends Controller
             'pageHeading' => 'Create product'
         ]);
     }
+
+    public function postCreate()
+    {
+        return view('portfolio.create', [
+            'pageHeading' => 'Product created'
+        ]);
+    }
 }

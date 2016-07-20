@@ -44,7 +44,10 @@ Route::group(['middleware' => 'web'], function () {
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::get('dashboard', 'DashboardController@index');
-    Route::resource('product', 'ProductController');
+
+    /** Products */
+    Route::get('/product/create', 'ProductController@create');
+    Route::post('/product/create', 'ProductController@postCreate');
 
     // temporary
     Route::get('/charts', function()
