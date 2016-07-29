@@ -348,7 +348,17 @@
                 </div>
                 <!-- /.col-lg-12 -->
            </div>
-			<div class="row">  
+			<div class="row">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
 				@yield('section')
 
             </div>
