@@ -349,6 +349,7 @@
                 <!-- /.col-lg-12 -->
            </div>
 			<div class="row">
+                @include('flash::message')
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul>

@@ -6,34 +6,38 @@
 <div class="col-sm-12">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <form role="form" method="POST" action="{{ url('/admin/product/create') }}">
+            {!! Form::open(['url' => '/admin/product/create', 'method' => 'POST']) !!}
                 <div class="form-group">
-                    <label>Title</label>
-                    <input class="form-control"/>
+                    {!! Form::label('title', 'Title') !!}
+                    {!! Form::text('title', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    <label>Description</label>
-                    <textarea class="form-control" rows="3"></textarea>
+                    {!! Form::label('slug', 'Slug') !!}
+                    {!! Form::text('slug', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    <label>Price</label>
-                    <input class="form-control" placeholder="Price">
+                    {!! Form::label('description', 'Description') !!}
+                    {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => '3']) !!}
                 </div>
                 <div class="form-group">
-                    <label>Is available</label>
-                    <select class="form-control">
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
-                    </select>
+                    {!! Form::label('price', 'Price') !!}
+                    {!! Form::text('price', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    <label>Url</label>
-                    <input class="form-control"/>
+                    {!! Form::label('is_available', 'Is available') !!}
+                    {!! Form::select('is_available', [
+                        '1' => 'Yes',
+                        '0' => 'No'
+                    ], '1' , ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('url', 'Url') !!}
+                    {!! Form::text('url', null, ['class' => 'form-control']) !!}
                     <p class="help-block">Url of external site</p>
                 </div>
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <button type="submit" class="btn btn-default">Add product</button>
-            </form>
+                {!! csrf_field() !!}
+                {!! Form::submit('Add product', ['class' => 'btn btn-default']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
