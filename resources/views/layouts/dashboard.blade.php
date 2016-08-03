@@ -250,6 +250,9 @@
                                 <li {{ (Request::is('admin/product/create') ? 'class="active"' : '') }}>
                                     <a href="{{ url('admin/product/create') }}">Add Product</a>
                                 </li>
+                                <li {{ (Request::is('admin/product/list') ? 'class="active"' : '') }}>
+                                    <a href="{{ url('admin/product/list') }}">View Products</a>
+                                </li>
                             </ul>
                         </li>
                         <li {{ (Request::is('admin/') ? 'class="active"' : '') }}>

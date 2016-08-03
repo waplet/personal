@@ -45,7 +45,7 @@ class ProductController extends Controller
     public function listAction()
     {
         return view('portfolio.list', [
-            'products' => Product::all(),
+            'products' => Product::paginate(20),
             'pageHeading' => 'List products'
         ]);
     }
