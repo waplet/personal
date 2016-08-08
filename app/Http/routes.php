@@ -51,6 +51,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
     Route::get('/product/create', 'ProductController@createAction');
     Route::post('/product/create', 'ProductController@postCreateAction');
     Route::get('/product/list', 'ProductController@listAction');
+    Route::get('/product/edit/{productId}', 'ProductController@editAction');
+    Route::post('/product/edit/{productId}', 'ProductController@postEditAction');
 
     // temporary
     Route::get('/charts', function()

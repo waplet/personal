@@ -246,7 +246,7 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-image fa-fw"></i> Portfolio<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <ul class="nav nav-second-level {{ Request::is('admin/product/edit/*') ? 'in' : '' }}">
                                 <li {{ (Request::is('admin/product/create') ? 'class="active"' : '') }}>
                                     <a href="{{ url('admin/product/create') }}">Add Product</a>
                                 </li>

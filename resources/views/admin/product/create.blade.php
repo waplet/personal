@@ -1,12 +1,17 @@
 @extends ('layouts.dashboard')
 
-@section('page_heading', $pageHeading)
+@section('page_heading', 'Create product')
 
 @section('section')
 <div class="col-sm-12">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            {!! Form::open(['url' => '/admin/product/create', 'method' => 'POST']) !!}
+                @if (isset($product))
+                    {!! Form::model($product, ['url' => '/admin/product/create']) !!}
+                @else
+                    {!! Form::open(['url' => '/admin/product/create', 'method' => 'POST']) !!}
+                @endif
+                {!! Form::hidden('id') !!}
                 <div class="form-group">
                     {!! Form::label('title', 'Title') !!}
                     {!! Form::text('title', null, ['class' => 'form-control']) !!}
