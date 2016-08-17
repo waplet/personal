@@ -16,7 +16,7 @@ class UserTableSeeder extends Seeder
         $user = [
             'name' => 'waplet',
             'email' => 'waplet@gmail.com',
-            'password' => bcrypt('waplet'),
+            'password' => bcrypt(env('ADMIN_PASSWORD')),
         ];
 
         DB::table((new \App\User())->getTable())->insert($user);
