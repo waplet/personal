@@ -24,4 +24,17 @@ class ProductImageManager extends ImageManagerAbstract
 
         return ProductImage::create($data);
     }
+
+    public function removeImage($productImageId)
+    {
+        $productImage = ProductImage::find($productImageId);
+
+        if (!$productImage) {
+            throw new \InvalidArgumentException('No product image found with specified id: ' . $productImageId);
+        }
+
+        $imageId = $productImage->image_id;
+
+        $this->remove($imageId);
+    }
 }

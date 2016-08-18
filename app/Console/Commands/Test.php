@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Image;
+use App\Models\ProductImage;
 use Illuminate\Console\Command;
 
 class Test extends Command
@@ -18,7 +20,7 @@ class Test extends Command
      *
      * @var string
      */
-    protected $description = 'Command for functionality testing, withtout runnig web';
+    protected $description = 'Command for functionality testing, without running web';
 
     /**
      * Create a new command instance.
@@ -37,6 +39,14 @@ class Test extends Command
      */
     public function handle()
     {
-        dump("works");
+        // $image = Image::find(1);
+        // foreach ($image->productImages()->get() as $productImage) {
+        //     dump($productImage);
+        // }
+        // dump($image->productImages());
+
+        // $productImage = ProductImage::find(1);
+        //
+        // dump($productImage->image()->first());
     }
 }

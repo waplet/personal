@@ -2,7 +2,7 @@
 
 namespace App\Managers;
 
-use app\Models\Image;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 
@@ -70,12 +70,12 @@ abstract class ImageManagerAbstract
                 throw new \InvalidArgumentException('Couldn\'t find image with id: ' . $imageId);
             }
         } else {
-            $imageObject = $this->create($file->getFilename());
+            $imageObject = $this->create($file->getClientOriginalName());
         }
 
-        $this->moveImage($file, $imageObject->getId());
+        $this->moveImage($file, $imageObject->id);
 
-        return $imageObject->getId();
+        return $imageObject->id;
     }
 
     /**
@@ -89,7 +89,26 @@ abstract class ImageManagerAbstract
         $newName = $id . '.' . $file->getClientOriginalExtension();
 
         $file->move(
-            $this->basePath, $newName
+            $this->basePath . $id . '/', $newName
         );
     }
+
+    protected function remove($imageId)
+    {
+        $imageObject = Image::find($imageId);
+
+        if (!$imageObject) {
+            // TODO(waplet): Or fail silently?
+            throw new \InvalidArgumentException('No image found with specified id: ' . $imageId);
+        }
+
+        $file = $this->basePath . $imageId . '/' . $imageId . '.' . $imageObject->extension;
+        if (file_exists($file)) {
+            unlink($file);
+        }
+
+        $imageObject->delete();
+    }
+
+    abstract function removeImage($childImageId);
 }
