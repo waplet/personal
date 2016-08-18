@@ -14,7 +14,9 @@ class PortfolioController extends Controller
     public function show($slug)
     {
         return view('portfolio.show', [
-            'product' => Product::where('slug', $slug)->first()
+            'product' => Product::where('slug', $slug)
+                ->where('is_available', 1)
+                ->first()
         ]);
     }
 }
