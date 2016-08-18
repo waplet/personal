@@ -8,6 +8,11 @@ class Image extends Model
 {
     public $table = 'images';
 
+    protected $fillable = [
+        'title',
+        'extension',
+    ];
+
     public function productImages()
     {
         return $this->hasMany('App\Models\ProductImage');
