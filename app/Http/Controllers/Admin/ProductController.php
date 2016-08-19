@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -64,6 +65,16 @@ class ProductController extends Controller
 
         return view('admin.product.create', [
             'product' =>  $product,
+        ]);
+    }
+
+    public function listImagesAction($productId)
+    {
+        $images = ProductImage::where('product_id', $productId)->paginate(20);
+
+        return view('admin.image.list', [
+            'type' => 'product',
+            'images' => $images,
         ]);
     }
 }

@@ -27,7 +27,7 @@
                             <a href="{{ URL::to('/portfolio/' . $product->slug) }}" target="_blank"><i class="fa fa-eye"></i></a>
                             <a href="{{ URL::to('/admin/product/edit/' . $product->id) }}"><i class="fa fa-pencil"></i></a>
                             <a onClick="confirm('Are you sure to delete?')" href="{{ URL::to('/admin/product/delete/' . $product->id) }}"><i class="fa fa-times"></i></a>
-                            | Add Images</td>
+                            <a href="{{ URL::to('/admin/product/' . $product->id . '/images') }}">View Images</a></td>
                     </tr>
                 @endforeach
             </tbody>
