@@ -18,16 +18,21 @@
             <tbody>
                 @foreach ($products as $product)
                     <tr>
-                        <td>{{ $product->title }}</td>
+                        <td><a href="{{ URL::to('/portfolio/' . $product->slug) }}"
+                               target="_blank">{{ $product->title }}</a></td>
                         <td>{{ $product->slug }}</td>
                         <td>{{ $product->price ?: 'Free' }}</td>
                         <td>{{ $product->is_available ? 'Yes' : 'No' }}</td>
                         <td>{{ link_to($product->url, null, ['target' => '_blank']) }}</td>
                         <td>
-                            <a href="{{ URL::to('/portfolio/' . $product->slug) }}" target="_blank"><i class="fa fa-eye"></i></a>
-                            <a href="{{ URL::to('/admin/product/edit/' . $product->id) }}"><i class="fa fa-pencil"></i></a>
-                            <a onClick="confirm('Are you sure to delete?')" href="{{ URL::to('/admin/product/delete/' . $product->id) }}"><i class="fa fa-times"></i></a>
-                            <a href="{{ URL::to('/admin/product/' . $product->id . '/images') }}">View Images</a></td>
+                            <a href="{{ URL::to('/admin/product/' . $product->id) }}"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                            |
+                            <a onClick="confirm('Are you sure to delete?')"
+                               href="{{ URL::to('/admin/product/delete/' . $product->id) }}"><i class="fa fa-times"></i>&nbsp;Delete</a>
+                            |
+                            <a href="{{ URL::to('/admin/product/' . $product->id . '/images') }}"><i
+                                        class="fa fa-file-image-o"></i>&nbsp;Images</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

@@ -52,10 +52,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
     /** Products */
     Route::get('/product/create', 'ProductController@createAction');
     Route::post('/product/create', 'ProductController@postCreateAction');
-    Route::get('/product/list', 'ProductController@listAction');
-    Route::get('/product/edit/{productId}', 'ProductController@editAction');
-    Route::post('/product/edit/{productId}', 'ProductController@postEditAction');
-    Route::get('/product/{productId}/images', 'ProductController@listImagesAction');
+    Route::get('/product', 'ProductController@indexAction');
+    Route::get('/product/{product}', 'ProductController@editAction');
+    Route::post('/product/{product}', 'ProductController@postEditAction');
+
+    /** Image */
+    Route::get('/product/{product}/images', 'ImageController@productImagesAction');
+    Route::post('/product/{product}/images', 'ImageController@addProductImageAction');
+    Route::get('/product/images/{productImage}/delete', 'ImageController@deleteProductImageAction');
+    Route::get('/project/{project}/images', 'ImageController@projectImagesAction');
 
     // temporary
     Route::get('/charts', function()

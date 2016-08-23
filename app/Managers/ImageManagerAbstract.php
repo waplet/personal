@@ -2,8 +2,8 @@
 
 namespace App\Managers;
 
+use App\Interfaces\ImageAwareInterface;
 use App\Models\Image;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 
 abstract class ImageManagerAbstract
@@ -15,11 +15,6 @@ abstract class ImageManagerAbstract
         'gif',
     ];
 
-    /**
-     * @var Model
-     */
-    protected $model;
-
     protected $basePath;
 
     public function __construct()
@@ -28,30 +23,15 @@ abstract class ImageManagerAbstract
     }
 
     /**
-     * TODO(waplet): Refactor scope of function
-     *
-     * @param $filename
-     *
-     * @return Image
+     * @param ImageAwareInterface $image
      */
-    protected function create($filename): Image
+    public function removeImage(ImageAwareInterface $image)
     {
-        $fileParts = pathinfo($filename);
+        // Removes current Image object
+        $image->image()->delete();
 
-        if (empty($fileParts['filename']) || !array_key_exists('extension', $fileParts)) {
-            throw new \InvalidArgumentException('Incorrect filename specified: ' . $filename);
-        }
-
-        if (!in_array($fileParts['extension'], $this->allowedExtension)) {
-            throw new \InvalidArgumentException('Incorrect extension specified: ' . $fileParts['extension']);
-        }
-
-        $data = [
-            'title' => $fileParts['filename'],
-            'extension' => $fileParts['extension'],
-        ];
-
-        return Image::create($data);
+        // Removes Child object
+        $image->delete();
     }
 
     /**
@@ -76,6 +56,31 @@ abstract class ImageManagerAbstract
         $this->moveImage($file, $imageObject->id);
 
         return $imageObject;
+    }
+
+    /**
+     * @param $filename
+     *
+     * @return Image
+     */
+    protected function create($filename): Image
+    {
+        $fileParts = pathinfo($filename);
+
+        if (empty($fileParts['filename']) || !array_key_exists('extension', $fileParts)) {
+            throw new \InvalidArgumentException('Incorrect filename specified: ' . $filename);
+        }
+
+        if (!in_array($fileParts['extension'], $this->allowedExtension)) {
+            throw new \InvalidArgumentException('Incorrect extension specified: ' . $fileParts['extension']);
+        }
+
+        $data = [
+            'title' => $fileParts['filename'],
+            'extension' => $fileParts['extension'],
+        ];
+
+        return Image::create($data);
     }
 
     /**
@@ -109,6 +114,4 @@ abstract class ImageManagerAbstract
 
         $imageObject->delete();
     }
-
-    abstract function removeImage($childImageId);
 }

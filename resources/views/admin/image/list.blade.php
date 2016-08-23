@@ -8,25 +8,43 @@
 
 @section('section')
     <div class="col-sm-12">
-        <table class="table">
+        <div class="col-sm-4">
+            <h3>Add Image</h3>
+            {!! Form::open(['files' => true]) !!}
+
+            <div class="form-group">
+                {!! Form::label('image', 'Image') !!}
+                {!! Form::file('image', ['class' => 'form-control']) !!}
+            </div>
+            <div class="form-group">
+                {!! csrf_field() !!}
+                {!! Form::submit('Add image', ['class' => 'btn btn-primary']) !!}
+            </div>
+            {!! Form::close() !!}
+        </div>
+        <div class="col-sm-8">
+            <table class="table table-hover">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Product ID</th>
                 <th>Title</th>
                 <th>Extension</th>
                 <th>Url</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
             @foreach ($images as $image)
                 <tr>
                     <td>{{ $image->id }}</td>
-                    <td>{{ $image->product_id }}</td>
                     <td>{{ $image->image->title }}</td>
                     <td>{{ $image->image->extension }}</td>
-                    <td>{{ link_to(url('/public/uploads/images/' . $image->image->id . '.' . $image->image->extension), null, ['target' => '_blank']) }}</td>
+                    <td>{{ link_to(url('/uploads/images/' . $image->image->id . '/' . $image->image->id . '.' . $image->image->extension), null, ['target' => '_blank']) }}</td>
                     <td>
+                        <a onClick="confirm('Are you sure to delete?')"
+                           href="{{ URL::to('/admin/' . $type . '/images/' . $image->id . '/delete') }}">
+                            <i class="fa fa-times"></i>&nbsp;Delete
+                        </a>
                         {{--<a href="" target="_blank"><i class="fa fa-eye"></i></a>--}}
                         {{--<a href=""><i class="fa fa-pencil"></i></a>--}}
                         {{--<a href=""><i class="fa fa-times"></i></a>--}}
@@ -39,5 +57,6 @@
 
         {{-- Pagination --}}
         {!! $images->render() !!}
+        </div>
     </div>
 @endsection

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,13 +13,13 @@ class Image extends Model
         'extension',
     ];
 
-    public function productImages()
+    public function productImage()
     {
-        return $this->hasMany('App\Models\ProductImage');
+        return $this->hasOne(ProductImage::class);
     }
 
-    public function projectImages()
+    public function projectImage()
     {
-        return $this->hasMany('App\Models\ProjectImage');
+        return $this->hasOne(ProjectImage::class);
     }
 }
