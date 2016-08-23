@@ -59,9 +59,9 @@ abstract class ImageManagerAbstract
      *
      * @param null $imageId
      *
-     * @return int
+     * @return Image
      */
-    protected function saveImage(UploadedFile $file, $imageId = null): int
+    protected function saveImage(UploadedFile $file, $imageId = null): Image
     {
         $imageObject = null;
         if ($imageId) {
@@ -75,7 +75,7 @@ abstract class ImageManagerAbstract
 
         $this->moveImage($file, $imageObject->id);
 
-        return $imageObject->id;
+        return $imageObject;
     }
 
     /**

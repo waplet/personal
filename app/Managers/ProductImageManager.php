@@ -15,14 +15,11 @@ class ProductImageManager extends ImageManagerAbstract
      */
     public function save(UploadedFile $file, $productId)
     {
-        $imageId = $this->saveImage($file);
+        $image = $this->saveImage($file);
 
-        $data = [
-            'image_id' => $imageId,
-            'product_id' => $productId,
-        ];
-
-        return ProductImage::create($data);
+        return $image->productImages()->save(
+            new ProductImage(['product_id' => $productId])
+        );
     }
 
     public function removeImage($productImageId)
