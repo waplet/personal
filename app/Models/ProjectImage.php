@@ -15,6 +15,6 @@ class ProjectImage extends Model
 
     public function image()
     {
-        return $this->belongsTo('App\Models\Image');
+        return $this->belongsTo(Image::class);
     }
 }
