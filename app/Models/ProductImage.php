@@ -2,17 +2,16 @@
 
 namespace App\Models;
 
-use App\Interfaces\ImageAwareInterface;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class ProductImage extends Model implements ImageAwareInterface
+class ProductImage extends ImageAbstract
 {
     protected $table = 'product_images';
 
     protected $fillable = [
         'image_id',
         'product_id',
+        'is_featured',
     ];
 
     public function image(): BelongsTo

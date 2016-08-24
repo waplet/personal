@@ -1,1 +1,5 @@
-{{ var_dump($product) }}
+<?php
+
+/** $product Product */
+?>
+{{ dump($product->getFeaturedImage()) }}

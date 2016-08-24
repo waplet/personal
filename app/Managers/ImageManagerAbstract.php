@@ -15,11 +15,18 @@ abstract class ImageManagerAbstract
         'gif',
     ];
 
+    /**
+     * @var ImageAwareInterface
+     */
+    protected $imageObject = null;
+
     protected $basePath;
+
+    public static $directory = '/uploads/images/';
 
     public function __construct()
     {
-        $this->basePath = public_path() . '/uploads/images/';
+        $this->basePath = public_path() . self::$directory;
     }
 
     /**
@@ -32,6 +39,24 @@ abstract class ImageManagerAbstract
 
         // Removes Child object
         $image->delete();
+    }
+
+    /**
+     * @return ImageManagerAbstract
+     */
+    public function setImageObject($imageObject)
+    {
+        $this->imageObject = $imageObject;
+
+        return $this;
+    }
+
+    /**
+     * @return null
+     */
+    public function getImageObject()
+    {
+        return $this->imageObject;
     }
 
     /**

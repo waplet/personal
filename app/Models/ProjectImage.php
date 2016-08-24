@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use App\Interfaces\ImageAwareInterface;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class ProjectImage extends Model implements ImageAwareInterface
+class ProjectImage extends ImageAbstract
 {
     protected $table = 'project_images';
 

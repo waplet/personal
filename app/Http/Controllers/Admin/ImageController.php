@@ -28,7 +28,7 @@ class ImageController extends Controller
             'image' => 'required',
         ]);
 
-        (new ProductImageManager())->save($request->file('image'), $product);
+        (new ProductImageManager())->save($request->file('image'), $product, $request->get('is_featured'));
 
         return redirect('/admin/product/' . $product->id . '/images');
     }
