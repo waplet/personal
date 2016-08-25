@@ -35,4 +35,7 @@ body {
     .portfolio .portfolio__block .portfolio__block__info .portfolio__block__price {
       padding: 5px; }
 
-/*# sourceMappingURL=custom.css.map */
+.contact__icon {
+  max-width: 64px; }
+
+/*# sourceMappingURL=personal.css.map */

@@ -18,10 +18,10 @@ Route::group(['middleware' => 'web'], function () {
     /**
      * Frontend routes
      */
-    Route::get('/', 'WelcomeController@index');
+    Route::get('/', 'IndexController@index');
     Route::get('/test', 'TestController@index');
     Route::post('/test', 'TestController@store')->name('test');
-    Route::get('home', 'HomeController@index');
+    // Route::get('home', 'HomeController@index');
     Route::resource('portfolio', 'PortfolioController', []);
     Route::get('/portfolio/{slug}', 'PorfolioController@showAction');
     
