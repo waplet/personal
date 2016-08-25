@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-    <div class="col-xs-4 col-xs-offset-4">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4">
         <!--  https://www.iconfinder.com/iconsets/social-flat -->
         <div class="row contact_row">
             <p>Hello,</p>
