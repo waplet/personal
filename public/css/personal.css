@@ -13,6 +13,9 @@ body {
     color: #2B2B2B;
     font-size: 80px;
     text-shadow: 2px 2px 2px #D3D3D3; }
+    .header .header__title a {
+      text-decoration: none;
+      color: inherit; }
   .header .header__subtitle {
     font-size: 14px;
     color: #2B2B2B;

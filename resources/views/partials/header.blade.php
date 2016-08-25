@@ -1,6 +1,6 @@
 <header>
     <div class="header">
-        <a href="{{ url('/') }}"><h1 class="header__title">waplet</h1></a>
+        <h1 class="header__title"><a href="{{ url('/') }}">waplet</a></h1>
         <h2 class="header__subtitle">living in a great world</h2>
     </div>
 </header>
