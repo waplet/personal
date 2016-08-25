@@ -7,6 +7,7 @@ body {
 .header {
   font-family: 'Lato';
   font-weight: 100;
+  font-size:12px;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -32,7 +33,7 @@ body {
 }
 
 .portfolio {
-  & .portfolio__block {
+  & #{&}__block {
     text-align:center;
     margin-bottom:30px;
     -webkit-border-radius:5px;
@@ -41,21 +42,65 @@ body {
     padding:4px;
     border:1px solid $shadow;
 
-    & .portfolio__block__info {
+    & #{&}__info {
       padding:9px;
 
-      & .portfolio__block__title a{
+      & #{&}__title a{
         color: inherit;
         text-decoration:none;
       }
 
-      & .portfolio__block__price {
+      & #{&}__price {
         padding:5px;
       }
     }
   }
 }
 
-.contact__icon {
-  max-width:64px;
+.contact_row {
+  margin-bottom: 15px;
+
+  .contact_row__block {
+    margin: auto;
+    position:relative;
+    max-width:64px;
+
+    .contact_row__block__icon {
+      max-width:64px;
+      z-index:2;
+    }
+
+    .contact_row__block__slider {
+      position:absolute;
+      top:0;
+      left:0px;
+      line-height: 64px;
+      visibility: hidden;
+      z-index:1;
+      font-weight:bold;
+      font-size:1.35em;
+
+      &.slider-facebook {
+        color: $slider-facebook;
+      }
+      &.slider-github {
+        color: $slider-github;
+      }
+      &.slider-twitter {
+        color: $slider-twitter;
+      }
+      &.slider-linkedin {
+        color: $slider-linkedin;
+      }
+    }
+  }
+
+  .contact_row__block:hover .contact_row__block__slider {
+    left:85px;
+    visibility: visible;
+  }
+}
+
+.half-bold {
+  font-weight:500;
 }

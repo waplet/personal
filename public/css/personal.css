@@ -4,6 +4,7 @@ body {
 .header {
   font-family: 'Lato';
   font-weight: 100;
+  font-size: 12px;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -30,15 +31,45 @@ body {
   border-radius: 5px;
   padding: 4px;
   border: 1px solid #D3D3D3; }
-  .portfolio .portfolio__block .portfolio__block__info {
+  .portfolio .portfolio__block .portfolio .portfolio__block__info {
     padding: 9px; }
-    .portfolio .portfolio__block .portfolio__block__info .portfolio__block__title a {
+    .portfolio .portfolio__block .portfolio .portfolio__block__info .portfolio .portfolio__block .portfolio .portfolio__block__info__title a {
       color: inherit;
       text-decoration: none; }
-    .portfolio .portfolio__block .portfolio__block__info .portfolio__block__price {
+    .portfolio .portfolio__block .portfolio .portfolio__block__info .portfolio .portfolio__block .portfolio .portfolio__block__info__price {
       padding: 5px; }
 
-.contact__icon {
-  max-width: 64px; }
+.contact_row {
+  margin-bottom: 15px; }
+  .contact_row .contact_row__block {
+    margin: auto;
+    position: relative;
+    max-width: 64px; }
+    .contact_row .contact_row__block .contact_row__block__icon {
+      max-width: 64px;
+      z-index: 2; }
+    .contact_row .contact_row__block .contact_row__block__slider {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      line-height: 64px;
+      visibility: hidden;
+      z-index: 1;
+      font-weight: bold;
+      font-size: 1.35em; }
+      .contact_row .contact_row__block .contact_row__block__slider.slider-facebook {
+        color: #2556A0; }
+      .contact_row .contact_row__block .contact_row__block__slider.slider-github {
+        color: #3C3C3C; }
+      .contact_row .contact_row__block .contact_row__block__slider.slider-twitter {
+        color: #00B7EB; }
+      .contact_row .contact_row__block .contact_row__block__slider.slider-linkedin {
+        color: #007CB8; }
+  .contact_row .contact_row__block:hover .contact_row__block__slider {
+    left: 85px;
+    visibility: visible; }
+
+.half-bold {
+  font-weight: 500; }
 
 /*# sourceMappingURL=personal.css.map */
