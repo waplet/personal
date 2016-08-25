@@ -38,6 +38,9 @@ class Handler extends ExceptionHandler {
 	{
 		if ($this->isHttpException($e))
 		{
+            if (env('APP_DEBUG')) {
+                return $this->convertExceptionToResponse($e);
+            }
 			return $this->renderHttpException($e);
 		}
 		else
