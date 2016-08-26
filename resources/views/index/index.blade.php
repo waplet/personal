@@ -10,7 +10,7 @@
                 <p>In 2016 I graduated University of Latvia, Faculty of Computing - <b>BSc Computer Science</b>
                 <hr/>
                 <p>I have made my career as a <b>Web Developer</b> and topics I am involved in are: <b>PHP, MySQL</b>,
-                    <span class="half-bold">Symfony, Laravel, Linux</span>, payment gateways, Python, etc.
+                    <span class="half-bold">Symfony, Laravel, Linux, Javascript</span>, payment gateways, Python, etc.
                     Basically everything that is or may come handy as a web developer.
                     But that does not mean that I do not want to learn new things. I would really like to try my hand at electronics/hardware.
                 </p>
