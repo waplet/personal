@@ -11,9 +11,7 @@
                 <h3>{{ $product->title }}</h3>
         </div>
         <div class="row">
-            <div class="col-sm-6">
-                {{ $product->description }}
-            </div>
+            {!! $product->description !!}
         </div>
     </div>
 </div>
