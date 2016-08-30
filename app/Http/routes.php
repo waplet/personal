@@ -50,17 +50,17 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
     Route::get('dashboard', 'DashboardController@index');
 
     /** Products */
-    Route::get('/product/create', 'ProductController@createAction');
-    Route::post('/product/create', 'ProductController@postCreateAction');
-    Route::get('/product', 'ProductController@indexAction');
-    Route::get('/product/{product}', 'ProductController@editAction');
-    Route::post('/product/{product}', 'ProductController@postEditAction');
+    Route::get('/product/create', 'ProductController@create');
+    Route::post('/product/create', 'ProductController@postCreate');
+    Route::get('/product', 'ProductController@index');
+    Route::get('/product/{product}', 'ProductController@edit');
+    Route::patch('/product/{product}', 'ProductController@postCreate');
 
     /** Image */
-    Route::get('/product/{product}/images', 'ImageController@productImagesAction');
-    Route::post('/product/{product}/images', 'ImageController@addProductImageAction');
-    Route::get('/product/images/{productImage}/delete', 'ImageController@deleteProductImageAction');
-    Route::get('/project/{project}/images', 'ImageController@projectImagesAction');
+    Route::get('/product/{product}/images', 'ImageController@productImages');
+    Route::post('/product/{product}/images', 'ImageController@addProductImage');
+    Route::get('/product/images/{productImage}/delete', 'ImageController@deleteProductImage');
+    Route::get('/project/{project}/images', 'ImageController@projectImages');
 
     // temporary
     Route::get('/charts', function()

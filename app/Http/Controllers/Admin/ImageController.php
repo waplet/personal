@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
-    public function productImagesAction(Product $product)
+    public function productImages(Product $product)
     {
         $images = ProductImage::where('product_id', $product->id)->paginate(20);
 
@@ -22,7 +22,7 @@ class ImageController extends Controller
         ]);
     }
 
-    public function addProductImageAction(Product $product, Request $request)
+    public function addProductImage(Product $product, Request $request)
     {
         $this->validate($request, [
             'image' => 'required',
@@ -33,7 +33,7 @@ class ImageController extends Controller
         return redirect('/admin/product/' . $product->id . '/images');
     }
 
-    public function deleteProductImageAction(ProductImage $productImage)
+    public function deleteProductImage(ProductImage $productImage)
     {
         (new ProductImageManager())->removeImage($productImage);
 

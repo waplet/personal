@@ -8,19 +8,19 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function indexAction()
+    public function index()
     {
         return view('admin.product.list', [
             'products' => Product::paginate(20),
         ]);
     }
 
-    public function createAction()
+    public function create()
     {
         return view('admin.product.create');
     }
 
-    public function postCreateAction(Request $request)
+    public function postCreate(Request $request)
     {
         $validators = [
             'title' => 'required|max:255',
@@ -53,7 +53,7 @@ class ProductController extends Controller
         return redirect('/admin/product/' . $product->id);
     }
 
-    public function editAction($productId)
+    public function edit($productId)
     {
         $product = Product::find($productId);
 
