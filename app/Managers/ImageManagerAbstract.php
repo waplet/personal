@@ -23,6 +23,7 @@ abstract class ImageManagerAbstract
     protected $basePath;
 
     public static $directory = '/uploads/images/';
+    public static $defaultImage = '/images/w_16_9.jpg';
 
     public function __construct()
     {

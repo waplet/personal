@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Managers\ImageManagerAbstract;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -36,7 +37,7 @@ class Product extends Model
             ->first();
 
         if (!$featuredImage) {
-            return '/images/no_picture.png';
+            return ImageManagerAbstract::$defaultImage;
         }
 
         return $featuredImage->getPath();

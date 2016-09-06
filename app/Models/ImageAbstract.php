@@ -17,6 +17,9 @@ abstract class ImageAbstract extends Model implements ImageAwareInterface
     {
         $dir = ImageManagerAbstract::$directory;
 
+        if (!$this->image) {
+            return ImageManagerAbstract::$defaultImage;
+        }
         return $dir . $this->id . '/' . $this->id . '.' . $this->image->extension;
     }
 }
