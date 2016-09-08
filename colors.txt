@@ -1,0 +1,6 @@
+bg -> #f2f1e6
+body-text -> #4c4c4c
+bg-inverse -> #4d4d4d
+text-inversed -> #f2f1e6 == bg
+text-unaccented -> #808080
+
