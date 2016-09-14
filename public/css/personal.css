@@ -41,9 +41,9 @@
   src: local("Roboto Light"), local("Roboto-Light"), url("/fonts/roboto-300.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
 body {
-  color: #3B3F40;
+  color: #4c4c4c;
   min-width: 360px;
-  background: #F2F2E9;
+  background: #f2f1e6;
   font-size: 14px; }
 
 .header {
@@ -56,9 +56,9 @@ body {
   text-align: center;
   margin: 0 0 40px; }
   .header .header__title {
-    color: #3B3F40;
+    color: #4c4c4c;
     font-size: 80px;
-    text-shadow: 2px 2px 2px #BFB9A4; }
+    text-shadow: 2px 2px 2px #808080; }
     .header .header__title a {
       text-decoration: none;
       color: inherit; }
@@ -71,18 +71,20 @@ body {
 
 .portfolio .portfolio__block {
   text-align: center;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  font-family: "Open-sans", sans-serif; }
   .portfolio .portfolio__block:hover .portfolio__block__info {
-    background: #53595b; }
+    background: #4d4d4d; }
+    .portfolio .portfolio__block:hover .portfolio__block__info .portfolio__block__info__title a {
+      color: #f2f1e6; }
   .portfolio .portfolio__block .portfolio__block__info {
-    padding: 9px;
-    background: #3B3F40; }
+    padding: 9px; }
     .portfolio .portfolio__block .portfolio__block__info .portfolio__block__info__title {
       font-size: 1.3em;
       font-weight: 400;
       margin: 8px 0; }
       .portfolio .portfolio__block .portfolio__block__info .portfolio__block__info__title a {
-        color: #F2F2E9;
+        color: #4c4c4c;
         display: block;
         width: 100%;
         text-decoration: none; }
@@ -129,14 +131,5 @@ body {
 .nopadding {
   padding: 0 !important;
   margin: 0 !important; }
-
-.bg-1 {
-  background: #BFB9A4; }
-
-.bg-2 {
-  background: #65D99C; }
-
-.bg-0 {
-  background: #0F9D84; }
 
 /*# sourceMappingURL=personal.css.map */

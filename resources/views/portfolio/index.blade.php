@@ -21,7 +21,7 @@
             </div>
         </div>
         @empty
-            <h3>Sorry, currently we have no products</h3>
+            <h2 class="text-center">Sorry, currently we have no products</h2>
         @endforelse
     </div>
 @endsection
