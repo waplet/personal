@@ -41,8 +41,10 @@
   src: local("Roboto Light"), local("Roboto-Light"), url("/fonts/roboto-300.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
 body {
-  color: #2B2B2B;
-  min-width: 360px; }
+  color: #4c4c4c;
+  min-width: 360px;
+  background: #f2f1e6;
+  font-size: 14px; }
 
 .header {
   font-family: 'Lato';
@@ -54,14 +56,15 @@ body {
   text-align: center;
   margin: 0 0 40px; }
   .header .header__title {
-    color: #2B2B2B;
+    color: #4c4c4c;
     font-size: 80px;
-    text-shadow: 2px 2px 2px #D3D3D3; }
+    text-shadow: 2px 2px 2px #808080; }
     .header .header__title a {
       text-decoration: none;
       color: inherit; }
   .header .header__subtitle {
     font-size: 14px;
+    margin-top: 10px;
     color: #2B2B2B;
     font-weight: bold;
     font-style: italic; }
@@ -69,22 +72,31 @@ body {
 .portfolio .portfolio__block {
   text-align: center;
   margin-bottom: 30px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  padding: 4px;
-  border: 1px solid #D3D3D3; }
+  font-family: "Open-sans", sans-serif; }
+  .portfolio .portfolio__block:hover .portfolio__block__info {
+    background: #4d4d4d; }
+    .portfolio .portfolio__block:hover .portfolio__block__info .portfolio__block__info__title a {
+      color: #f2f1e6; }
   .portfolio .portfolio__block .portfolio__block__info {
     padding: 9px; }
-    .portfolio .portfolio__block .portfolio__block__info .portfolio__block__info__title a {
-      color: inherit;
-      text-decoration: none; }
+    .portfolio .portfolio__block .portfolio__block__info .portfolio__block__info__title {
+      font-size: 1.3em;
+      font-weight: 400;
+      margin: 8px 0; }
+      .portfolio .portfolio__block .portfolio__block__info .portfolio__block__info__title a {
+        color: #4c4c4c;
+        display: block;
+        width: 100%;
+        text-decoration: none; }
     .portfolio .portfolio__block .portfolio__block__info .portfolio__block__info__price {
       padding: 5px; }
+  .portfolio .portfolio__block .portfolio__block__image :hover {
+    background: black; }
 
 .contact_row {
   font-family: "Roboto";
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  font-weight: 400; }
   .contact_row .contact_row__block {
     margin: auto;
     position: relative;
@@ -115,5 +127,9 @@ body {
 
 .half-bold {
   font-weight: 500; }
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important; }
 
 /*# sourceMappingURL=personal.css.map */
