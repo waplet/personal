@@ -1,0 +1,45 @@
+.contact_row {
+  font-family: "Roboto";
+  margin-bottom: 15px;
+  font-weight: 400;
+
+  .contact_row__block {
+    margin: auto;
+    position:relative;
+    max-width:64px;
+
+    .contact_row__block__icon {
+      max-width:64px;
+      z-index:2;
+    }
+
+    .contact_row__block__slider {
+      position:absolute;
+      top:0;
+      left:0px;
+      line-height: 64px;
+      visibility: hidden;
+      z-index:1;
+      font-weight:bold;
+      font-size:1.35em;
+
+      &.slider-facebook {
+        color: $slider-facebook;
+      }
+      &.slider-github {
+        color: $slider-github;
+      }
+      &.slider-twitter {
+        color: $slider-twitter;
+      }
+      &.slider-linkedin {
+        color: $slider-linkedin;
+      }
+    }
+  }
+
+  .contact_row__block:hover .contact_row__block__slider {
+    left:85px;
+    visibility: visible;
+  }
+}
