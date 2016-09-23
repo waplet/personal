@@ -88,4 +88,21 @@
       display: inherit;
     }
   }
+
+  /**
+Portfolio v2
+**/
+  .portfolio__row {
+    background: $color-background;
+    padding: 12px;
+    font-size:16px;
+    margin-bottom:12px;
+    box-sizing: border-box;
+    border-left:12px solid $color-text;
+    &:hover {
+      background: $color-background-active;
+      border-left:12px solid $color-background-inverse;
+      color: $color-text-inverse;
+    }
+  }
 }

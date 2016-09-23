@@ -11,7 +11,7 @@ class PortfolioController extends Controller
         $products = Product::where('is_available', 1)
             ->get();
 
-        return view('portfolio.index', [
+        return view('portfolio.index2', [
             'products' => $products
         ]);
     }
