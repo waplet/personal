@@ -33,7 +33,7 @@
                     {!! Form::select('is_available', [
                         '1' => 'Yes',
                         '0' => 'No'
-                    ], '1' , ['class' => 'form-control']) !!}
+                    ], isset($product) ? $product->is_available : '1', ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('url', 'Url') !!}

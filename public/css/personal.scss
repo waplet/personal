@@ -38,93 +38,6 @@ body {
   }
 }
 
-.portfolio {
-  .portfolio__block {
-    text-align:center;
-    margin-bottom:30px;
-    font-family: "Open-sans", sans-serif;
-    &:hover .portfolio__block__info{
-      background: $color-background-active;
-
-      .portfolio__block__info__title a {
-        color: $color-text-inverse;
-      }
-    }
-    .portfolio__block__info {
-      padding:9px;
-      //background: $color-background-inverse;
-
-
-      .portfolio__block__info__title {
-        font-size: 1.3em;
-        font-weight:400;
-        margin: 8px 0;
-        a {
-          color: $color-text;
-          display:block;
-          width:100%;
-          text-decoration:none;
-        }
-      }
-      .portfolio__block__info__price {
-        padding:5px;
-      }
-    }
-
-    .portfolio__block__image {
-      :hover {
-        background:black;
-      }
-    }
-  }
-}
-
-.contact_row {
-  font-family: "Roboto";
-  margin-bottom: 15px;
-  font-weight: 400;
-
-  .contact_row__block {
-    margin: auto;
-    position:relative;
-    max-width:64px;
-
-    .contact_row__block__icon {
-      max-width:64px;
-      z-index:2;
-    }
-
-    .contact_row__block__slider {
-      position:absolute;
-      top:0;
-      left:0px;
-      line-height: 64px;
-      visibility: hidden;
-      z-index:1;
-      font-weight:bold;
-      font-size:1.35em;
-
-      &.slider-facebook {
-        color: $slider-facebook;
-      }
-      &.slider-github {
-        color: $slider-github;
-      }
-      &.slider-twitter {
-        color: $slider-twitter;
-      }
-      &.slider-linkedin {
-        color: $slider-linkedin;
-      }
-    }
-  }
-
-  .contact_row__block:hover .contact_row__block__slider {
-    left:85px;
-    visibility: visible;
-  }
-}
-
 .half-bold {
   font-weight:500;
 }
@@ -133,3 +46,6 @@ body {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+@import 'pages/_contact';
+@import 'pages/_portfolio';

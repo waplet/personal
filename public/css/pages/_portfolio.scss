@@ -1,0 +1,91 @@
+.portfolio {
+  .portfolio__block {
+    text-align:center;
+    margin-bottom:30px;
+    font-family: "Open-sans", sans-serif;
+    &:hover .portfolio__block__info{
+      background: $color-background-active;
+
+      .portfolio__block__info__title a {
+        color: $color-text-inverse;
+      }
+    }
+    .portfolio__block__info {
+      padding:9px;
+      //background: $color-background-inverse;
+
+
+      .portfolio__block__info__title {
+        font-size: 1.3em;
+        font-weight:400;
+        margin: 8px 0;
+        a {
+          color: $color-text-inverse;
+          display:block;
+          width:100%;
+          text-decoration:none;
+        }
+      }
+      .portfolio__block__info__price {
+        padding:5px;
+      }
+    }
+
+    .portfolio__block__image {
+      position:relative;
+    }
+
+    .portfolio__block__overlay {
+      position:absolute;
+      bottom:0;
+      height:45px;
+      line-height:25px;
+      font-size:1.2em;
+      //opacity:0.8;
+      background:$color-background-active;
+      width:100%;
+      color: $color-text-inverse;
+      padding:10px;
+      // transitioning
+      max-height:100%;
+      -webkit-transition-property: height, font-size;
+      -moz-transition-property: height, font-size;
+      -o-transition-property: height, font-size;
+      transition-property: height, font-size;
+      -webkit-transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      -o-transition-duration: 0.5s;
+      transition-duration: 0.5s;
+      transition: height 0.5s;
+      -webkit-transition: height 0.5s;
+      -moz-transition: height 0.5s;
+
+      .portfolio__block__overlay__title {
+        color:inherit;
+        text-decoration:none;
+        display:block;
+        width:100%;
+      }
+    }
+
+    &:hover .portfolio__block__overlay{
+      height:100%;
+      line-height:1.5em;
+      background: $color-background-inverse;
+      opacity: 1;
+      overflow:hidden;
+      text-emphasis: "...";
+    }
+
+    .portfolio__block__overlay__description {
+      text-align:left;
+      color: $color-text-lighter;
+      display:none;
+      margin-top:5px;
+    }
+
+    &:hover .portfolio__block__overlay__description {
+      display: inherit;
+    }
+  }
+}
