@@ -1,6 +1,7 @@
 @extends('base')
 
 @section('content')
+    @if (false)
     {!! Form::open(
     array(
         'route' => 'test',
@@ -28,4 +29,10 @@
     </div>
     {!! Form::close() !!}
     </div>
+    @endif
+
+
+    <div id="root">
+    </div>
+    <script src="{{ asset('/js/resources/react/main.js') }}"></script>
 @endsection

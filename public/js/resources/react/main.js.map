@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../resources/react/main.jsx"],"names":["ReactDOM","render","document","getElementById"],"mappings":";;AAAAA,SAASC,MAAT,CACI;AAAA;AAAA;AAAA;AAAA,CADJ,EAEIC,SAASC,cAAT,CAAwB,MAAxB,CAFJ;;AAKA","file":"main.js","sourcesContent":["ReactDOM.render(\n    <h1>Hello, world!</h1>,\n    document.getElementById('root')\n);\n\n//"]}
