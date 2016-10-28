@@ -1,7 +1,7 @@
-@extends('base')
+@extends('layouts.sidebar')
 
-@section('content')
-    <div class="container portfolio">
+@section('layout_content')
+    <div class="portfolio">
         @forelse ($products as $product)
         <div class="col-xs-6 col-lg-4 nopadding">
             <div class="portfolio__block">
@@ -28,4 +28,8 @@
             <h2 class="text-center">Sorry, currently we have no products</h2>
         @endforelse
     </div>
+@endsection
+
+@section('sidebar_content')
+    Sidebar
 @endsection

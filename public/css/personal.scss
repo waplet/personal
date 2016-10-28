@@ -1,7 +1,6 @@
 @import '_colors';
 @import '_fonts';
 
-
 body {
   color: $color-text;
   min-width:320px;
@@ -49,3 +48,5 @@ body {
 
 @import 'pages/_contact';
 @import 'pages/_portfolio';
+
+@import 'blocks/_category.scss';
