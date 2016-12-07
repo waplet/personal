@@ -32,7 +32,7 @@
     @endif
 
 
-    <div id="root">
+    <div id="root" style="text-align:center;">
     </div>
     <script src="{{ asset('/js/resources/react/main.js') }}"></script>
 @endsection
