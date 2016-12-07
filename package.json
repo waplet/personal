@@ -4,6 +4,10 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "gulp": "^3.8.8",
-    "laravel-elixir": "*"
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^1.9.1",
+    "laravel-elixir": "*",
+    "laravel-elixir-rollup-official": "^1.1.0"
   }
 }

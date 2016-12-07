@@ -8,11 +8,12 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        $products = Product::where('is_available', 1)
-            ->get();
-
-        return view('portfolio.index2', [
-            'products' => $products
+        return view('layouts.full_width', [
+            'isReact' => true,
+            'css' => [],
+            'js' => [
+                'js/react/portfolio.js',
+            ],
         ]);
     }
 
